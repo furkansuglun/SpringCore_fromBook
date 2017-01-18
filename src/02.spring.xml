@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <!-- her bean bir sınıfı temsil eder.new anahtar sözcüğünü kullanamdan sınfılara ait nesneler oluşturabiliyoruz. -->
+        
+        <!-- her bean id değeri birbirinden farklı olmalıdır.
+        id ler birbrinden farklı olalırdır ve bean e ait id bir defa kullanılmalıdır. -->
+      	<bean id="fuel" class="_02.hellospring.Fuel"/>
+      	  
+      	<bean id="car" class="_02.hellospring.Car">
+        	<!-- eğer baska sınıfa ait nesneler parametre olarak constructora gönderilecekse oza bu etiketi kullanırız  -->
+         	<constructor-arg ref="fuel"/>
+         	<!-- burada car sınıfının constructor ' ı içine fuel sınıfına ait bir nesne enjekte ediliyor. -->
+        </bean>
+</beans>

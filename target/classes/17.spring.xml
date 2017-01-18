@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+       
+	<bean id="hello" class="_17.Spring.Bean.Definition.Inheritance.Hello" >
+		<property name="mesaj1" value="Hello#Mesaj1" />
+		<property name="mesaj2" value="Hello#Mesaj2" />
+	</bean>
+	
+	<!-- parent inheritance(kalıtım) için kullanıldı . -->
+	<bean id="author" class="_17.Spring.Bean.Definition.Inheritance.Author" parent="hello">
+		<property name="mesaj1" value="Author#Mesaj1"/>
+		<property name="mesaj3" value="Author#Mesaj3"/>
+	</bean>
+     
+</beans>
