@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+       
+	
+     
+	<bean id="aBean" class="_19.Parameters.Constructor.Dependency.Injection.A"></bean>
+	
+	<bean id="bBean" class="_19.Parameters.Constructor.Dependency.Injection.B"
+		lazy-init="true" scope="singleton">
+		<constructor-arg ref="aBean"></constructor-arg>
+	</bean>
+	
+	<bean id="cBean"
+		class="_19.Parameters.Constructor.Dependency.Injection.C" lazy-init="true" scope="singleton">
+		<constructor-arg type="int" value="2017" index="1"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="Furkan Süğlün" index="0"></constructor-arg>
+
+	</bean>
+	
+	<!-- tipi belirtilmeden index numarsaı veirlirse yeterli olur
+	<bean id="cBean"
+		class="_19.Parameters.Constructor.Dependency.Injection.C">
+		<constructor-arg index="1" value="2017"></constructor-arg>
+		<constructor-arg index="0"
+			value="tipi belirtilmeden index ile de belirleyebilriiz">
+		</constructor-arg>
+	</bean>
+	 -->
+	
+	<!-- 
+		<bean id="cBean"
+		class="_19.Parameters.Constructor.Dependency.Injection.C">
+		<constructor-arg value="2017" name="sayi"></constructor-arg>
+		<constructor-arg
+			value="name ile de constructor arg ları belirleyebilriiz"
+			name="mesaj">
+		</constructor-arg>
+	</bean>
+	
+	 -->
+	
+	
+	
+	
+	<!--  c sınıfının A ve B tipindeki constructor ' ı için bean tnaımı 
+	<bean id="cBean"
+		class="_19.Parameters.Constructor.Dependency.Injection.C" lazy-init="true" scope="singleton">
+		<constructor-arg ref="aBean" />
+		<constructor-arg ref="bBean" />
+
+	</bean>
+	
+	-->
+	
+	
+	
+	
+</beans>

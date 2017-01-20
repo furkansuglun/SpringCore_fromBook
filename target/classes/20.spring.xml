@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+       
+	
+     
+	<bean id="aBean" class="_20.Setter.Dependency.Injection.A"></bean>
+	
+	<bean id="bBean" class="_20.Setter.Dependency.Injection.B"
+		lazy-init="true" scope="singleton">
+		
+		<constructor-arg ref="aBean"></constructor-arg>
+		
+		<property name="mesaj" value="Mesaj değişkeni"></property>
+		
+		<property name="sayi" value="2017"></property>
+
+		<property name="aNesnesi" ref="aBean"></property>
+	
+	</bean>
+</beans>
